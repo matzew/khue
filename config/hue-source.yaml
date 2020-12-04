@@ -11,6 +11,7 @@ spec:
           args:
             - --hueBridge=IP
             - --username=USER
+            - --lights=Sonos Lampe WZ
           # env:
           #   - name: POD_NAME
           #     value: "mypod"
