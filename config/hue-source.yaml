@@ -1,7 +1,7 @@
 apiVersion: sources.knative.dev/v1
 kind: ContainerSource
 metadata:
-  name: huer-source
+  name: hue-source
 spec:
   template:
     spec:
@@ -9,8 +9,8 @@ spec:
         - image: ko://github.com/matzew/khue/cmd
           name: hue
           args:
-            - --hueBridge=192.168.178.24
-            - --username=st8J1czqSzhEI3UEot1unVT2hcm2Bk3S367lO5F2
+            - --hueBridge=IP
+            - --username=USER
           # env:
           #   - name: POD_NAME
           #     value: "mypod"
