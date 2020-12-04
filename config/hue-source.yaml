@@ -1,0 +1,23 @@
+apiVersion: sources.knative.dev/v1
+kind: ContainerSource
+metadata:
+  name: huer-source
+spec:
+  template:
+    spec:
+      containers:
+        - image: ko://github.com/matzew/khue/cmd
+          name: hue
+          args:
+            - --hueBridge=192.168.178.24
+            - --username=st8J1czqSzhEI3UEot1unVT2hcm2Bk3S367lO5F2
+          # env:
+          #   - name: POD_NAME
+          #     value: "mypod"
+          #   - name: POD_NAMESPACE
+          #     value: "event-test"
+  sink:
+    ref:
+      apiVersion: serving.knative.dev/v1
+      kind: Service
+      name: ping-display
